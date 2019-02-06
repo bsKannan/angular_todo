@@ -1,0 +1,23 @@
+{
+  "name": "angulartodo",
+  "version": "1.0.0",
+  "description": "\"Deploying angular todo app\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsKannan/todo.git"
+  },
+  "author": "Kannan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bsKannan/todo/issues"
+  },
+  "homepage": "https://github.com/bsKannan/todo#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

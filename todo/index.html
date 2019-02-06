@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="Todo-app">
+<head>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</head>
+<div class="container">
+  <body ng-controller="TodoCtrl">
+      <h4 class="list-group-item title">You have {{getTotal()}} AngularJS Todos</h4>
+
+  
+    <div ng-repeat = "todo in todos" class="list-group-item">
+        <!-- checkbox -->
+        <input type = "checkbox" id="cb" ng-model="todo.done" class="done-{{todo.done}}"/>
+
+        <!-- text -->
+        <span ng-model-instant="todo.text"class="done-{{todo.done}}">{{todo.text}}</span>
+
+        <!-- move up -->
+        <a href="" ng-click="move($index, 'up')"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+
+        <!-- move down -->
+        <a href="" ng-click="move($index, 'down')"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+
+        <!-- remove -->
+        <a href="" ng-click="removeTodo($index)"><span class="glyphicon glyphicon-remove" ></span></a>
+
+       
+     </div>
+
+    <div class='list-group-item' ng-show ='todoText'>
+      <input type='checkbox' disabled="true">
+      <input type='text' disabled="true" class="todobox" placeholder='{{todoText}}' [ng-trim="true"]>
+ 
+    </div>
+
+    <form ng-submit="addTodo()" class="list-group-item">
+      <input type="text" placehodler="Add your task here" ng-model="todoText"/>
+
+      <input type="submit"> 
+      <button id="clear-completed" ng-click="toggleSelect()"ng-click="toggleSelect()">SelectAll</button>
+     </form>
+</div>
+</body>
+</html>
+
+<!-- https://www.sanwebe.com/2015/02/how-to-select-deselect-all-checkboxes-using-angularjs -->
